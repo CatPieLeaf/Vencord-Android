@@ -1,4 +1,6 @@
-# Vendroid
+# Vendroid (but maintained) (wip)
+
+Vendroid has been left alone for a year, now it hardly works, ill try to fix that, and keep it fixed
 
 Vendroid is a custom Discord client for Android. The way it works is that it loads the discord.com website and injects Vencord.
 
