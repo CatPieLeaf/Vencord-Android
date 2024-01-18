@@ -10,6 +10,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Locale;
 
+import dev.kckingcollin.vdbm.R;
+
 public class HttpClient {
     public static final class HttpException extends IOException {
         private final HttpURLConnection conn;
