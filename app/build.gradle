@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'dev.vendicated.vencord'
+    namespace 'dev.kckingcollin.vdbm'
     compileSdk 33
 
     defaultConfig {
-        applicationId 'dev.vendicated.vencord'
+        applicationId 'dev.kckingcollin.vdbm'
         minSdk 21
         targetSdk 33
         versionCode 3
@@ -30,6 +30,6 @@ android {
 }
 
 dependencies {
-    implementation 'androidx.annotation:annotation:1.5.0'
+    implementation 'androidx.annotation:annotation:1.7.1'
 }
 
