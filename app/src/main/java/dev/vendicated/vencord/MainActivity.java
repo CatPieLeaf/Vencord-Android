@@ -13,6 +13,9 @@ import android.webkit.WebView;
 import java.io.IOException;
 import java.util.Objects;
 
+import dev.kckingcollin.vdbm.BuildConfig;
+import dev.kckingcollin.vdbm.R;
+
 public class MainActivity extends Activity {
     public static final int FILECHOOSER_RESULTCODE = 8485;
     private boolean wvInitialized = false;
