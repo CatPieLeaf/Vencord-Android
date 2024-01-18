@@ -7,7 +7,7 @@ android {
     compileSdk 33
 
     defaultConfig {
-        applicationId "dev.vendicated.vencord"
+        applicationId 'dev.vendicated.vencord'
         minSdk 21
         targetSdk 33
         versionCode 3
