@@ -4,10 +4,10 @@ plugins {
 
 android {
     namespace 'dev.vendicated.vencord'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
-        applicationId "dev.vendicated.vencord"
+        applicationId 'dev.vendicated.vencord'
         minSdk 21
         targetSdk 33
         versionCode 3
@@ -30,6 +30,7 @@ android {
 }
 
 dependencies {
-    implementation 'androidx.annotation:annotation:1.5.0'
+    implementation 'androidx.annotation:annotation:1.7.1'
+    implementation 'androidx.core:core:1.12.0'
 }
 

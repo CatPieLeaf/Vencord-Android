@@ -1,7 +1,6 @@
 package dev.vendicated.vencord;
 
 import android.app.Activity;
-import android.content.res.Resources;
 
 import androidx.annotation.NonNull;
 
@@ -51,14 +50,14 @@ public class HttpClient {
             VencordMobileRuntime = readAsText(is);
         }
 
-        var conn = fetch(Constants.JS_BUNDLE_URL);
+        var conn = fetch();
         try (var is = conn.getInputStream()) {
             VencordRuntime = readAsText(is);
         }
     }
 
-    private static HttpURLConnection fetch(String url) throws IOException {
-        var conn = (HttpURLConnection) new URL(url).openConnection();
+    private static HttpURLConnection fetch() throws IOException {
+        var conn = (HttpURLConnection) new URL(Constants.JS_BUNDLE_URL).openConnection();
         if (conn.getResponseCode() >= 300) {
             throw new HttpException(conn);
         }
