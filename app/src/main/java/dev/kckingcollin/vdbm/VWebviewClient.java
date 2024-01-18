@@ -2,6 +2,7 @@ package dev.kckingcollin.vdbm;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.os.Build;
 import android.view.View;
 import android.webkit.*;
 
@@ -41,7 +42,7 @@ public class VWebviewClient extends WebViewClient {
     @Override
     public WebResourceResponse shouldInterceptRequest(WebView view, WebResourceRequest req) {
         var uri = req.getUrl();
-        if (req.isForMainFrame() || req.getUrl().getPath().endsWith(".css")) {
+        if (req.isForMainFrame() || Objects.requireNonNull(req.getUrl().getPath()).endsWith(".css")) {
             try {
                 return doFetch(req);
             } catch (IOException ex) {
@@ -71,6 +72,9 @@ public class VWebviewClient extends WebViewClient {
         }
         if (url.endsWith(".css")) modifiedHeaders.put("Content-Type", "text/css");
 
-        return new WebResourceResponse(modifiedHeaders.getOrDefault("Content-Type", "application/octet-stream"), "utf-8", code, msg, modifiedHeaders, conn.getInputStream());
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            return new WebResourceResponse(modifiedHeaders.getOrDefault("Content-Type", "application/octet-stream"), "utf-8", code, msg, modifiedHeaders, conn.getInputStream());
+        }
+        return null;
     }
 }
