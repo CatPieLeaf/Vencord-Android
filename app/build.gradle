@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace 'dev.kckingcollin.vdbm'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId 'dev.kckingcollin.vdbm'
@@ -31,5 +31,6 @@ android {
 
 dependencies {
     implementation 'androidx.annotation:annotation:1.7.1'
+    implementation 'androidx.core:core:1.12.0'
 }
 

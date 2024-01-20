@@ -6,6 +6,7 @@ import android.os.Build;
 import android.view.View;
 import android.webkit.*;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import java.io.IOException;
@@ -15,7 +16,7 @@ import java.util.*;
 
 public class VWebviewClient extends WebViewClient {
     @Override
-    public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+    public boolean shouldOverrideUrlLoading(WebView view, @NonNull WebResourceRequest request) {
         var url = request.getUrl();
         if ("discord.com".equals(url.getAuthority()) || "about:blank".equals(url.toString())) {
             return false;
@@ -41,7 +42,6 @@ public class VWebviewClient extends WebViewClient {
     @Nullable
     @Override
     public WebResourceResponse shouldInterceptRequest(WebView view, WebResourceRequest req) {
-        var uri = req.getUrl();
         if (req.isForMainFrame() || Objects.requireNonNull(req.getUrl().getPath()).endsWith(".css")) {
             try {
                 return doFetch(req);
