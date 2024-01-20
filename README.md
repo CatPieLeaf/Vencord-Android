@@ -16,4 +16,4 @@ You are likely better off using [Aliucord](https://github.com/Aliucord/Aliucord)
 
 ## Download
 
-Visit the [latest release](https://github.com/Vencord/Vendroid/releases/latest), grab the apk and install it
+Visit the [latest release](https://github.com/KCkingcollin/Vendroid-but-maintained/releases/latest), grab the apk and install it
