@@ -73,8 +73,6 @@ public class MainActivity extends Activity {
         s.setDomStorageEnabled(true);
         s.setAllowFileAccess(true);
 
-        wv.addJavascriptInterface(new VencordNative(this, wv), "VencordMobileNative");
-
         try {
             HttpClient.fetchVencord(this);
         } catch (IOException ex) {
@@ -154,6 +152,17 @@ public class MainActivity extends Activity {
             // Permission already granted, proceed with WebView setup
             configureWebView();
         }
+        wv.addJavascriptInterface(new VencordNative(this, wv) {
+            @Override
+            public void yourMethod1() {
+
+            }
+
+            @Override
+            public void yourMethod2() {
+
+            }
+        }, "VencordMobileNative");
     }
     private void configureWebView() {
         // WebView configuration code
@@ -192,9 +201,6 @@ public class MainActivity extends Activity {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 // Permission granted, proceed with WebView setup
                 configureWebView();
-            } else {
-                // Permission denied, handle accordingly
-                // You may want to show a message to the user or take other actions
             }
         }
     }
