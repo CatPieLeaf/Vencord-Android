@@ -1,4 +1,4 @@
-# Vendroid (but maintained) (wip)
+# VenDroid But Maintained (VDBM)
 
 Vendroid has been left alone for a year, now it hardly works, ill try to fix that, and keep it fixed, but dont expect too much this will be my first java project, i expect v1 of this fork to take a while
 
